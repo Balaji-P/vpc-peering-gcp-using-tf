@@ -1,2 +1,4 @@
 *.iml
 *.terraform
+*.tfstate
+*.tfstate.backup
