@@ -1,30 +1,30 @@
 
-variable "provision-project-id" {
+variable "provision_project_id" {
   type        = string
   description  = "Project to create and provision infrastructure in"
 }
 
-variable "target-network" {
+variable "target_network" {
   type        = string
   description  = "VPC network name to attach to"
 }
 
-variable "target-network-project" {
+variable "target_network_project" {
   type        = string
   description  = "Project containing target VPC network"
 }
 
-variable "connector-cidr-block" {
+variable "connector_cidr_block" {
   type        = string
   description  = "CIDR block to provide to Serverless Access Connector (must be a /28)"
 }
 
-variable "connector-region" {
+variable "connector_region" {
   type        = string
   description  = "Region to provision access connector (should be the same region as intended Deployment Zone)"
 }
 
-variable "billing-account" {
+variable "billing_account" {
   type        = string
   description  = "Billing account ID, used during project provisioning"
 }

@@ -13,12 +13,12 @@ For more details about the provisioned network architecture, see the [CloudWrigh
 
 ### Inputs
 
-- `provision-project-id`: the project ID to create
-- `billing-account`: a billing account ID to associate with the created project 
-- `target-network`: the name of the existing Shared VPC network to attach to
-- `target-network-project`: the project in which the target Shared VPC network lives
-- `connector-cidr-block`: a free CIDR block (must be a /28) used to provision the Serverless Access Connector
-- `connector-region`: the region in which to provision the Serverless Access Connector
+- `provision_project_id`: the project ID to create
+- `billing_account`: a billing account ID to associate with the created project 
+- `target_network`: the name of the existing Shared VPC network to attach to
+- `target_network_project`: the project in which the target Shared VPC network lives
+- `connector_cidr_block`: a free CIDR block (must be a /28) used to provision the Serverless Access Connector
+- `connector_region`: the region in which to provision the Serverless Access Connector
 
 ### Outputs
 
@@ -29,7 +29,7 @@ For more details about the provisioned network architecture, see the [CloudWrigh
 Invoked standalone from this project:
 
 ```bash
-$ terraform apply -var 'provision-project-id=my-new-project' -var 'target-network=existing-shared-vpc' -var 'target-network-project=existing-host-project' -var 'connector-cidr-block=10.125.10.0/28' -var 'connector-region=us-central1' -var 'billing-account=BILLING-ACCOUNT-ID'
+$ terraform apply -var 'provision_project_id=my-new-project' -var 'target_network=existing-shared-vpc' -var 'target_network_project=existing-host-project' -var 'connector_cidr_block=10.125.10.0/28' -var 'connector_region=us-central1' -var 'billing_account=BILLING-ACCOUNT-ID'
 ```
 
 Invoked as a module in a terraform script:
@@ -38,11 +38,11 @@ Invoked as a module in a terraform script:
 module "cloudwright-deployment-zone" {
   source  = "CloudWright/cloudwright-vpc-peering/google"
   version = "0.1.0"
-  provision-project-id = "my-new-project"
-  target-network = "existing-shared-vpc"
-  target-network-project = "existing-host-project"
-  connector-cidr-block = "10.125.10.0/28"
-  connector-region = "us-central1"
-  billing-account = "BILLING-ACCOUNT-ID"
+  provision_project_id = "my-new-project"
+  target_network = "existing-shared-vpc"
+  target_network_project = "existing-host-project"
+  connector_cidr_block = "10.125.10.0/28"
+  connector_region = "us-central1"
+  billing_account = "BILLING-ACCOUNT-ID"
 }
 ```
