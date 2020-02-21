@@ -3,9 +3,9 @@ provider "google-beta" {
 }
 
 resource "google_project" "deployment_zone" {
-  project_id = var.provision-project-id
+  project_id = var.provision_project_id
   name       = "CloudWright Deployment Zone"
-  billing_account = var.billing-account
+  billing_account = var.billing_account
 }
 
 resource "google_project_service" "billing" {
